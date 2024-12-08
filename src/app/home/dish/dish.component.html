@@ -1,0 +1,18 @@
+<!-- Div binds the tags of our dish component together. -->
+<!-- appHighlight is called here to invoke the selector of our directive and pass the color variable. -->
+<div class="card" [appHighlight] = 'color2'>
+    <h3 [appHighlight] = 'color'>Dish Name: {{dish.dish | uppercase}} </h3>
+    <p>Price: {{dish.price | currency:'EUR'}}</p>
+    <img class="img" src="{{dish.pic}}"><br>
+    <label>Number of Servings</label>
+    <!-- Servings is two-way databound from our .ts file -->
+    <input type="number" [(ngModel)]="servings">
+    <!-- Button to AddtoCart is only shown if number of servings is above zero -->
+    <div *ngIf="servings>=1">
+        <button (click)="addToCart()">Add to Cart</button>
+    </div>
+    <div *ngIf="servings<=0">
+        <p>Please add some servings before trying to add to cart!</p>
+    </div>
+    
+</div>

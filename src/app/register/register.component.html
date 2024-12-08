@@ -1,0 +1,28 @@
+<br>
+<form appConfirm #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm, addressForm)">
+    <label>Username:</label><br>
+    <input ngModel name="username" #username="ngModel" required minlength="6">
+    <span style="color:red" *ngIf="username.touched && username.invalid"><br>*Username is required of at least 6 characters.</span>
+    <br>
+
+    <label>Password:</label><br>
+    <input ngModel name="password" #password="ngModel" required>
+    <span style="color:red" *ngIf="password.touched && password.errors?.['required']"><br>*Password is required, please enter a username.</span>
+    <br>
+
+    <label>Confirm Password:</label><br>
+    <input ngModel name="confirmPassword" #confirmPassword="ngModel" required>
+    <span style="color:red" *ngIf="confirmPassword.touched && confirmPassword.invalid"><br>*Confirm Password is required, please enter a username.</span>
+    <br>
+
+    <form #addressForm="ngForm">
+        <label>Address:</label><br>
+        <label>Street Number:</label><br>
+        <input type="text" name="street" ngModel #street="ngModel"><br>
+
+        <label>Zip Code:</label>
+        <input type="number" name="zip" ngModel #zip="ngModel"><br>
+    </form>
+
+    <button type="submit" [disabled]="registerForm.form.invalid || addressForm.form.invalid">Submit</button>
+</form>

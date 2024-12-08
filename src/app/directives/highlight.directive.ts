@@ -1,0 +1,28 @@
+import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
+
+@Directive({
+  selector: '[appHighlight]'
+})
+export class HighlightDirective {
+
+  // Takes the property binding/selector and sets the value of it based on passed variable
+  @Input() appHighlight;
+
+  // Creates our variables for element and renderer that we can access from only within this class.
+  constructor(private el: ElementRef, public renderer: Renderer2) { }
+
+  // HostListener allows us to listen to certain events (like mouse events) and perform functions based on those events
+  @HostListener('mouseenter') onMouseEnter(){
+    this.highlight(this.appHighlight);
+  }
+
+  @HostListener('mouseleave') onMouseLeave(){
+    this.highlight('');
+  }
+
+  // Highlight function sets the background color of selected element based on input color.
+  private highlight(color:string){
+    this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', color);
+  }
+
+}

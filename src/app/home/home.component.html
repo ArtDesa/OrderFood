@@ -1,0 +1,17 @@
+<div style="text-align: right;">
+    <button (click)="goToCart()">Cart</button>
+    <button (click)="goToOrders()">Orders</button>
+</div>
+
+<div *ngIf="route.children.length === 0">
+    <label>Search by Ingredients: </label>
+    <!-- Input allows us to two-way bind a variable to use as our search argument in the pipe-->
+    <input [(ngModel)]="ingredient">
+    
+    <!-- By adding the pipe on our *ngFor, we can  -->
+    <div *ngFor="let obj of dishes | ingSearch:ingredient">
+        <app-dish [dish]="obj"></app-dish>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

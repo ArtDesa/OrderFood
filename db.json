@@ -1,0 +1,223 @@
+{
+  "dishes": [
+    {
+      "id": 1,
+      "dish": "Tikka Masala",
+      "ingredients": [
+        "olive oil",
+        "chicken",
+        "onion",
+        "cloves garlic",
+        "ginger",
+        "jalapeno",
+        "turmeric",
+        "cumin",
+        "paprika",
+        "masala",
+        "cayenne pepper",
+        "tomatoes",
+        "heavy cream",
+        "Kosher salt",
+        "cilantro",
+        "rice",
+        "naan"
+      ],
+      "price": 5,
+      "pic": "assets/pics/tikka-masala.png"
+    },
+    {
+      "id": 2,
+      "dish": "Truffled Pizza",
+      "ingredients": [
+        "dough",
+        "shiitake mushroom",
+        "cremini mushrooms",
+        "portobello mushrooms",
+        "fontina cheese",
+        "thyme",
+        "truffle oil",
+        "parmesan cheese"
+      ],
+      "price": 5,
+      "pic": "assets/pics/truffled-pizza.png"
+    },
+    {
+      "id": 3,
+      "dish": "Mujadara",
+      "ingredients": [
+        "olive oil",
+        "onion",
+        "rice",
+        "garlic",
+        "lentils",
+        "cumin",
+        "salt"
+      ],
+      "price": 5,
+      "pic": "assets/pics/mujadara.png"
+    },
+    {
+      "id": 4,
+      "dish": "Meat Lover Burger",
+      "ingredients": [
+        "bun",
+        "onion",
+        "ground beef",
+        "special sauce",
+        "bacon"
+      ],
+      "price": 5,
+      "pic": "assets/pics/meat-burger.png"
+    },
+    {
+      "id": 5,
+      "dish": "Salmon with Steamed Veggies",
+      "ingredients": [
+        "salmon",
+        "butter",
+        "broccli",
+        "carrot",
+        "special sauce",
+        "rice"
+      ],
+      "price": 5,
+      "pic": "assets/pics/salmon.png"
+    },
+    {
+      "id": 6,
+      "dish": "Honey Shrimp",
+      "ingredients": [
+        "honey",
+        "butter",
+        "shrimp",
+        "rice",
+        "soy sauce",
+        "sesame oil",
+        "sesame seeds"
+      ],
+      "price": 5,
+      "pic": "assets/pics/honey-shrimp.png"
+    },
+    {
+      "id": 7,
+      "dish": "Veggie Meatballs",
+      "ingredients": [
+        "beyond meat",
+        "olive oil",
+        "mushrooms",
+        "onion",
+        "crumbled bread",
+        "carrot",
+        "flour"
+      ],
+      "tags": [
+        "veg",
+        "nonDairy"
+      ],
+      "price": 5,
+      "pic": "assets/pics/veggie-meatballs.png"
+    },
+    {
+      "id": 8,
+      "dish": "Tacos",
+      "ingredients": [
+        "ground beef",
+        "lettuce",
+        "onion",
+        "taco sauce",
+        "soft tacos",
+        "cheese"
+      ],
+      "price": 5,
+      "pic": "assets/pics/tacos.png"
+    },
+    {
+      "id": 9,
+      "dish": "Veggie Burger",
+      "ingredients": [
+        "beyond meat",
+        "olive oil",
+        "bun",
+        "onion",
+        "lettuce",
+        "tomato",
+        "pickles"
+      ],
+      "price": 5,
+      "pic": "assets/pics/veggie-burger.png"
+    },
+    {
+      "id": 10,
+      "dish": "Lemon Chicken",
+      "ingredients": [
+        "lemon",
+        "chicken",
+        "heavy cream",
+        "onion",
+        "garlic",
+        "maggi",
+        "dill",
+        "rice"
+      ],
+      "price": 5,
+      "pic": "assets/pics/lemon-chicken.png"
+    },
+    {
+      "id": 11,
+      "dish": "Chicken Alfredo",
+      "ingredients": [
+        "chicken",
+        "cheese",
+        "flour",
+        "mushroom",
+        "rice",
+        "milk",
+        "thyme",
+        "rosemary"
+      ],
+      "price": 5,
+      "pic": "assets/pics/chicken-alfredo.png"
+    },
+    {
+      "id": 12,
+      "dish": "Dumplings",
+      "ingredients": [
+        "pork",
+        "sesame oil",
+        "soy sauce",
+        "pepper",
+        "green onion",
+        "mushroom",
+        "carrot",
+        "shrimp",
+        "ginger",
+        "garlic",
+        "red cabbage",
+        "vinegar",
+        "red pepper flake"
+      ],
+      "price": 5,
+      "pic": "assets/pics/dumplings.png"
+    }
+  ],
+  "users": [
+    {
+      "username": "asdasd",
+      "password": "asdasd",
+      "address": {
+        "street": "315 asd",
+        "zip": 12345
+      },
+      "id": 1
+    },
+    {
+      "username": "johnDoe",
+      "password": "12345",
+      "address": {
+        "street": "123 John St",
+        "zip": 12345
+      },
+      "id": 2
+    }
+  ]
+}

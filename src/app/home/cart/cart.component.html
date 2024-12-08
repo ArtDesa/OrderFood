@@ -1,0 +1,8 @@
+<div *ngFor="let item of cart">
+    {{item.dish.dish}} : {{item.servings}} <br>
+    Price: {{item.dish.price*item.servings}}<br>
+</div>
+Total: {{total}}
+<br>
+<button>Place Order</button>
+<br>
