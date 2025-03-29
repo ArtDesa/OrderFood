@@ -102,7 +102,13 @@ const routes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-/*ng command - Use to run application from the VS Code terminal. 
+/*
+Before running the application, you need to start the JSON server (using db.json) with: json-server --watch db.json
+This will launch the backend at a default URL, typically http://localhost:3000.
+*Note: This will require the terminal used to run the command (the terminal will be busy running the server to take any other commands)
+You must open another terminal to run the ng serve to start the Application.
+
+ng command - Use to run application from the VS Code terminal. 
 Run project from terminal with: ng serve
 Stop the app when it is running with (in the terminal): Ctrl+C
 

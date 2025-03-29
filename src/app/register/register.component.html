@@ -28,7 +28,7 @@
          that references the Angular directive ngModel applied to the input. -->
     <!-- It gives you access to the input’s state (e.g., whether it’s valid, touched, dirty, etc.) within the template.
          This is useful when you want to check or display the input field's validation status or value in real-time in the template. -->
-    <input ngModel name="username" #username="ngModel" required minlength="6">
+    <input ngModel name="username" #username="ngModel" required minlength="6"> <!--required minlength="6"-->
     <!-- <span> tag is an inline element, meaning it doesn’t cause line breaks and flows with surrounding content. -->
     <!-- is a generic inline container used for grouping and styling text or other inline elements. -->
     <span style="color:red" *ngIf="username.touched && username.invalid"><br>*Username is required of at least 6 characters.</span>
@@ -36,12 +36,12 @@
 
     <label>Password:</label><br>
     <input ngModel name="password" #password="ngModel" required>
-    <span style="color:red" *ngIf="password.touched && password.errors?.['required']"><br>*Password is required, please enter a username.</span>
+    <span style="color:red" *ngIf="password.touched && password.errors?.['required']"><br>*Password is required, please provide a password.</span>
     <br>
 
     <label>Confirm Password:</label><br>
     <input ngModel name="confirmPassword" #confirmPassword="ngModel" required>
-    <span style="color:red" *ngIf="confirmPassword.touched && confirmPassword.invalid"><br>*Confirm Password is required, please enter a username.</span>
+    <span style="color:red" *ngIf="confirmPassword.touched && confirmPassword.invalid"><br>*Please confirm the password you have provided.</span>
     <br>
 
     <form #addressForm="ngForm">

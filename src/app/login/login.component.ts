@@ -74,32 +74,44 @@ export class LoginComponent implements OnInit {
   login(){
     let body = {
       username: this.username.value,
-      password: this.loginForm.get('password')
+      password: this.password.value //loginForm.get('password')
     }
 
-    let verified;
-
-    //valid users can't login for some reason. verified it coming out as false
+    
     this.server.login().subscribe((data)=>{
+      let verified = false;
+
       for(let i=0; i<data.length; i++){
+        console.log("The loop iteration:", i);
+        console.log("The body.username: ", body.username);
+        console.log("The data[i].username: ", data[i].username);
+        console.log("The body.password: ", body.password);
+        console.log("The data[i].password: ", data[i].password);
+        console.log("--------------------------------------------");
+        
         if(body.username === data[i].username && body.password === data[i].password){
+          console.log("Reached inside if statement of for loop");
           verified = true;
+          break;
         }
       }
-      verified = false;
-    });
+      
+      if(verified){
+        this.router.navigate(['home']);
+      }
+      else{
+        alert("User does not exist or password does not match!")
+      }
 
-    if(verified){
-      this.router.navigate(['home']);
-    }
-    else{
-      alert("User does not exist or password does not match!")
-    }
-    
+    });
   }
 
   get username(){
     return this.loginForm.get('username');
+  }
+
+  get password(){
+    return this.loginForm.get('password');
   }
 
 }

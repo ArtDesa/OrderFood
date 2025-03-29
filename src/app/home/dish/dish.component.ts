@@ -30,7 +30,9 @@ export class DishComponent implements OnInit {
       dish: this.dish,
       servings: this.servings
     }
-
+    
+    /*In this CartService instance from the constructor, use the sendToCart() method 
+      to send the {dish, servings} to its cart[] property*/
     this.cartService.sendToCart(info);
   }
 

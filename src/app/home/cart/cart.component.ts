@@ -9,7 +9,7 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartComponent implements OnInit {
   
   //CartComponent class has cart and total properties
-  cart; total;
+  cart; total = 0;
 
   //CartComponent takes a CartService object
   constructor(private cartService: CartService) { }
@@ -22,5 +22,8 @@ export class CartComponent implements OnInit {
     this.cart = this.cartService.getCart();
     this.total = this.cartService.total();
   }
+
+  //Needs method that counts type of dishes in cart with matching id value.
+  //If id_value = x -> add serving_value -> display it in cart.component.html
 
 }

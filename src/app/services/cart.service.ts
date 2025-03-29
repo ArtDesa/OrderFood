@@ -43,14 +43,40 @@ export class CartService {
 
   //Takes a dish object argument and appends it to the end of the cart
   sendToCart(dish){
-    this.cart.push(dish);
+
+    //Is the cart empty?
+    if(this.cart.length == 0){
+      this.cart.push(dish); 
+    }else{
+      
+      let newDish = true;
+      
+      //Search through this.cart
+      for(let i=0;i<this.cart.length;i++){
+
+        //Does dish already exist in cart?
+        if(dish.dish.id == this.cart[i].dish.id){
+          
+          this.cart[i].servings += dish.servings;
+          
+          newDish = false;
+          break;
+          
+        }
+      }
+      //If dish is new push it to cart, otherwise skip
+      if(newDish){
+        this.cart.push(dish);
+      }
+    }
   }
 
   //Adds and returns the total price of all dishes in the cart
   total(){
-    let sum;
+    let sum = 0;
+    
     for(let i=0;i<this.cart.length;i++){
-      this.cart[i].dish.price += sum
+      sum += this.cart[i].dish.price * this.cart[i].servings;
     }
     return sum;
   }

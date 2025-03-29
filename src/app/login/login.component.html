@@ -8,9 +8,9 @@
 <form [formGroup]="loginForm" (ngSubmit)="login()">
     <label>Username:</label><br>
     <input formControlName="username">
-    <span style="color:red" *ngIf="usernameError"><br>*Username is required to be at least 6 characters.</span>
+    <span style="color:red" *ngIf="loginForm.get('username').touched && loginForm.get('username').invalid"><br>*Username is required to be at least 6 characters.</span>
     <br>
-
+    <!-- "usernameError" -->
     <label>Password:</label><br>
     <input formControlName="password">
     <span style="color:red" *ngIf="loginForm.get('password').touched && loginForm.get('password').invalid"><br>*Username is required to be at least 6 characters.</span>
