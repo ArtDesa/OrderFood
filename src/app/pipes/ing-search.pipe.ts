@@ -1,5 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+//Create custom Pipes to use in Application.
+//Pipe: {{<value> | ingSearch:ingredient}}
+// {{<value> | <pipe>:<argument>}}
+//The pipe searches dishes for a specified ingredient.
+
 @Pipe({
   name: 'ingSearch'
   // --> | ingSearch:ingredient

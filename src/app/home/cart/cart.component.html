@@ -1,7 +1,9 @@
+<!-- *ngFor lops through the cart and displays the dish, servings, and price -->
 <div *ngFor="let item of cart">
     {{item.dish.dish}} : {{item.servings}} <br>
     Price: {{item.dish.price*item.servings}}<br>
 </div>
+<!-- Then displays the total price below -->
 Total: {{total}}
 <br>
 <button>Place Order</button>

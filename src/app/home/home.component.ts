@@ -8,6 +8,14 @@ import { BackendService } from "../services/backend.service";
     styleUrls: ['./home.component.css']
 })
 
+/*HomeComponent class no longer has an array property dishes[] that 
+  holds multiple objects {} (has been commented out below). 
+  Check the bottom of the page for comments explaining what it does instead.
+
+  Describing what was commented out below: 
+  (Each object has multiple key-pair values 
+  Example: {"id":1, "price":5}, {"id":2, "price":6}, {"id":3, "price":7}} 
+  Each {} object is a dish, each dish has multiple key-value pairs) */
 export class HomeComponent implements OnInit{
     // dishes=[
     //     {
@@ -211,12 +219,20 @@ export class HomeComponent implements OnInit{
     //     }
     // ]
 
+    //Instead, it has the "dishes" property and "ingredient"='' property
     dishes;
 
     ingredient = '';
 
+    /*The constructor takes arguments for 
+    ActivatedRoute object, Router object, BackendService object */
     constructor(public route: ActivatedRoute, private router: Router, private server: BackendService) { }
 
+    /*ngOnInit()-> When initialized, uses BackendService's getDishes() method to assign 
+      the data in the db.json file of the dishes to the local variable "dishes" */
+    /*Use ngOnInit() to perform more complex setup tasks that rely on Angular's lifecycle, 
+    such as fetching data from a service, initializing input properties, or 
+    interacting with the DOM. */
     ngOnInit(){
       this.server.getDishes().subscribe((data)=>{
         this.dishes = data;
@@ -224,10 +240,14 @@ export class HomeComponent implements OnInit{
       
     }
 
+    /* Sends user to the cart html page when the Cart button is pressed. 
+    Check home.component.html for use */
     goToCart(){
       this.router.navigate(['/home/cart']);
     }
 
+    /* Sends user to the orders html page when the Orders button is pressed. 
+    Check home.component.html for use */
     goToOrders(){
       this.router.navigate(['/home/orders']);
     }

@@ -1,4 +1,6 @@
 import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
+/*directives -> allows you to extend or manipulate the behavior of elements in the DOM (Document Object Model). 
+It's a way to apply custom behavior or modify the appearance of elements in a declarative and reusable manner. */
 
 @Directive({
   selector: '[appHighlight]'

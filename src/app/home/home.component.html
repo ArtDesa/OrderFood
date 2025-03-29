@@ -1,3 +1,6 @@
+<!-- Provides butttons for user to navigate to other pages (Cart and Orders pages) -->
+<!-- Check the home.components.ts page to see definition for
+     goToCart() and goToOrders() methods -->
 <div style="text-align: right;">
     <button (click)="goToCart()">Cart</button>
     <button (click)="goToOrders()">Orders</button>
@@ -6,10 +9,25 @@
 <div *ngIf="route.children.length === 0">
     <label>Search by Ingredients: </label>
     <!-- Input allows us to two-way bind a variable to use as our search argument in the pipe-->
+    <!-- <input> allows us to two-way bind a variable to use as our search argument in the pipe-->
+    <!-- [(ngModel)] combines Property Binding [], and Event Binding () into a single, convenient syntax for two-way data binding. -->
+    <!-- ngModel-> used to bind a property in your Angular component (the model) and an HTML element (like an input field) in your template.
+         Be it through Property Binding [], Event Binding(), or both/Two-way binding [()] -->
+    <!-- ngModel purpose: linking the model (application data) with the view (HTML elements) in a seamless, two-way data binding process.  -->
+    
+    <!-- ingredient property is defined in HomeComponent class in home.component.ts (near end of file). Value is '' -->
+    <!-- If the user types into the <input> field, the value of "ingredient" is automatically updated in the component HomeComponent class.
+    If the value of ingredient changes in the component HomeComponent class (e.g., through program logic), 
+    the <input> field is updated to reflect that change. -->
     <input [(ngModel)]="ingredient">
     
+    <!-- *ngFor -> acts as a For loop for Html tags (dynamically generate HTML tags based on that data) -->
+    <!-- dishes=[ {}, {}, {}, ...] Each {} is represented by the "obj" loop/iteration variable -->
     <!-- By adding the pipe on our *ngFor, we can  -->
     <div *ngFor="let obj of dishes | ingSearch:ingredient">
+        <!-- <app-dish> is from the dish.component.ts. It implements the dish.component.html on this page -->
+        <!-- dish is the property in DishComponent class -->
+        <!-- [dish] Property Binds value to "obj" from "let obj of dishes | ingSearch:ingredient" -->
         <app-dish [dish]="obj"></app-dish>
     </div>
 </div>

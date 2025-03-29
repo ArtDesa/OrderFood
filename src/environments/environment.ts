@@ -2,6 +2,8 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+//environment object is declared with const because it is meant to be immutable. (its a reference and should not be reassigned during the application runtime)
+//environment object-> commonly used in Angular projects to manage environment-specific configurations.True -> Production environment. False -> Dev environment
 export const environment = {
   production: false
 };

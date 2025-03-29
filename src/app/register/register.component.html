@@ -1,7 +1,36 @@
+<!-- This is the Register html page. Asks for Username, Password, Confirm password, 
+     Address (Street Number, Zip Code) -->
+
+<!-- ngMForm, ngModel basically act as a way to name specific tags -->
+
+<!-- This is a Template-Driven Form. The form's structure and logic are primarily defined in the HTML template itself 
+     (right here in this html file). The requirements for user input for what's valid and invalid are defined on this page. -->
+
+<!-- We give the form (<form> element) a Template Variable called(named) #registerForm.
+    ngForm is a directive provided by the FormsModule.
+    Angular automatically creates a FormGroup instance for the <form>, allowing us to manage its state, validation, and events easily.   
+     
+     And add an Event Binding () on (ngSubmit) for the submit button so that we can pass through the the information from our form so we can use it.
+     
+     onSubmit(registerForm, addressForm) method-> From the RegisterComponent class defined in register.component.ts
+     It will take in the registerForm and addressForm Template Variables as arguments for the onSubmit() method. -->
+
+<!-- appConfirm -> the selector for the confirm directive at comfirm.directive.ts, 
+                   which we are using to confirm that the Password and Confirm Password match. 
+     This is so that the form can use the confirm directive.-->
 <br>
 <form appConfirm #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm, addressForm)">
+    <!-- The following provide input for the user to fill and requirements for those values -->
     <label>Username:</label><br>
+    <!-- name="" attribute is an HTML feature used to uniquely identify the form control within the <form> element. -->
+    <!-- ngModel keyword tells the <input> that it is a FormControl. Add a Template Variable  -->
+    <!-- #username="ngModel" syntax creates a template reference variable called username 
+         that references the Angular directive ngModel applied to the input. -->
+    <!-- It gives you access to the input’s state (e.g., whether it’s valid, touched, dirty, etc.) within the template.
+         This is useful when you want to check or display the input field's validation status or value in real-time in the template. -->
     <input ngModel name="username" #username="ngModel" required minlength="6">
+    <!-- <span> tag is an inline element, meaning it doesn’t cause line breaks and flows with surrounding content. -->
+    <!-- is a generic inline container used for grouping and styling text or other inline elements. -->
     <span style="color:red" *ngIf="username.touched && username.invalid"><br>*Username is required of at least 6 characters.</span>
     <br>
 

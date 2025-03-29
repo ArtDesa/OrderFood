@@ -2,6 +2,8 @@ import { TestBed } from '@angular/core/testing';
 
 import { CartService } from './cart.service';
 
+//Tests the CartService class of the cart/service.ts file 
+
 describe('CartService', () => {
   let service: CartService;
 

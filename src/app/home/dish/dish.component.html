@@ -1,9 +1,23 @@
 <!-- Div binds the tags of our dish component together. -->
-<!-- appHighlight is called here to invoke the selector of our directive and pass the color variable. -->
+<!-- appHighlight is called here to invoke the selector of our directive (HighlightDirective) 
+     and pass the color2 property from the DishComponent class in dish.component.ts -->
+<!-- appHighlight property is defined in Highlight directive. color2 is defined in the dish class -->
 <div class="card" [appHighlight] = 'color2'>
+    <!-- dish.dish because in home.component.ts, the names for each dish is set under the "dish" key-value pair 
+         Explanation: dish.dish -> {}."dish"  
+         In home.component.html, the dish property from dish.component.ts is Property Binded to each object {}
+         inside the dishes[] array from home.component.ts through the use of the selector as a tag <app-dish> 
+         in home.component.html
+    -->
+    <!-- Ex: dishes=[ {}, {}, {}, ...] Each {} is a dish  -->
+    <!-- Ex: dishes=[ {"id": 1, "dish": "Tikka Masala", .....}, {}, {}, ...] 
+         inside each prior dish {} is a "dish" key-value pair. So, dish.dish" -->
     <h3 [appHighlight] = 'color'>Dish Name: {{dish.dish | uppercase}} </h3>
+    <!-- dish.price because in home.component.ts, the prices for each dish is found under "price"  -->
     <p>Price: {{dish.price | currency:'EUR'}}</p>
+    <!-- dish.pic because in home.component.ts, the images for each dish is set under "pic" -->
     <img class="img" src="{{dish.pic}}"><br>
+    
     <label>Number of Servings</label>
     <!-- Servings is two-way databound from our .ts file -->
     <input type="number" [(ngModel)]="servings">

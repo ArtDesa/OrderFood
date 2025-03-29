@@ -1,3 +1,10 @@
+<!-- This is the Html for the Login page. It is a Reactive Form where 
+     the form's structure and logic are defined in the component class (check login.component.ts file) using 
+     Angular's FormGroup and FormControl. 
+     In the login.component.ts file, you can see the rules and requirements for the user's inputs defined -->
+
+<!-- Property Bind formGroup to the property loginForm in the LoginComponent class at login.component.ts (line 33) -->
+<!-- Event Bind ngSubmit to the login() method that can be found in LoginComponent class at login.component.ts (line 70) -->
 <form [formGroup]="loginForm" (ngSubmit)="login()">
     <label>Username:</label><br>
     <input formControlName="username">

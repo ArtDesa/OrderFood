@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+// Placeholders to be used elsewhere
+
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
