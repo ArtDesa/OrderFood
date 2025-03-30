@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Start the JSON server first (using db.json file) with: `json-server --watch db.json`. This is hosted on `http://localhost:3000/`.
+Start the JSON server 'backend' first (uses db.json file) that stores and retrieves data with: `json-server --watch db.json`. This is hosted at `http://localhost:3000/`.
 Then run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
