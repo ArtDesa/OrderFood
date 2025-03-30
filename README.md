@@ -4,7 +4,7 @@ It makes use of a JSON server to act as a backend to store and retrieve data of 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
-## Development server
+## How to start the OrderFood app
 
 Start the JSON server 'backend' first (uses db.json file) that stores and retrieves data with: `json-server --watch db.json`. This is hosted at `http://localhost:3000/`.
 Then run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
