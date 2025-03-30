@@ -1,4 +1,6 @@
 # FoodCart
+This application allows users to register, login, and add different dishes they with to order to their cart. 
+It makes use of a JSON server to act as a backend to store and retrieve data of users registered and dishes the app displays for users to order.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
