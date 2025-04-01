@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { AbstractControl, FormBuilder, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BackendService } from '../services/backend.service';
@@ -14,6 +14,7 @@ ValidatorFn-> a function type used to define custom validators for form controls
                   It takes a control (of type AbstractControl) and returns ValidationErrors or null.
 Validators-> a built-in Angular class with a set of predefined validation functions like required, min, max, email, etc.
                   These are commonly used for both template-driven and reactive forms.
+EventEmitter, Output-> for indicating when successful login is done to reveal Home hyperlink
 */
 
 @Component({
@@ -22,6 +23,9 @@ Validators-> a built-in Angular class with a set of predefined validation functi
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  //On successful login, sends value tof true to App module to pas it to Header component to reveal Home hyperlink
+  @Output() loggedIn = new EventEmitter<boolean>();
 
   //Form Builder object "fb", Router object "router", BackendService object "server"
   constructor(private fb: FormBuilder, private router:Router, private server: BackendService) { }
@@ -81,16 +85,9 @@ export class LoginComponent implements OnInit {
     this.server.login().subscribe((data)=>{
       let verified = false;
 
-      for(let i=0; i<data.length; i++){
-        console.log("The loop iteration:", i);
-        console.log("The body.username: ", body.username);
-        console.log("The data[i].username: ", data[i].username);
-        console.log("The body.password: ", body.password);
-        console.log("The data[i].password: ", data[i].password);
-        console.log("--------------------------------------------");
+      for(let i=0; i<data.length; i++){ 
         
-        if(body.username === data[i].username && body.password === data[i].password){
-          console.log("Reached inside if statement of for loop");
+        if(body.username === data[i].username && body.password === data[i].password){ 
           verified = true;
           break;
         }
@@ -98,6 +95,9 @@ export class LoginComponent implements OnInit {
       
       if(verified){
         this.router.navigate(['home']);
+        
+        //Sends value of true to App module to indicate successful login
+        this.loggedIn.emit(true);
       }
       else{
         alert("User does not exist or password does not match!")

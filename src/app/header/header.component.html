@@ -5,4 +5,5 @@
      localhost:4200/register, localhost:4200/login, localhost:4200/home -->>
 <a routerLink="/register" routerLinkActive="active">Register</a> |
 <a routerLink="/login" routerLinkActive="active">Login</a> |
-<a routerLink="/home" routerLinkActive="active">Home</a>
+<a [style.visibility]="isHomeVisible ? 'visible' : 'hidden'" routerLink="/home" routerLinkActive="active">Home</a>
+<!-- isHomeVisible hides Home until the user logs in first -->

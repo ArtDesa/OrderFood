@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core'; //Input is for hiding Home until login is done
 
 // Placeholders to be used elsewhere
 
@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
+  //Hides Home hyperlink until first successful login
+  @Input() isHomeVisible: boolean = false;
 
   constructor() { }
 

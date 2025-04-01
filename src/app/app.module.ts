@@ -102,6 +102,7 @@ const routes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
 /*
 Before running the application, you need to start the JSON server (using db.json) with: json-server --watch db.json
 This will launch the backend at a default URL, typically http://localhost:3000.

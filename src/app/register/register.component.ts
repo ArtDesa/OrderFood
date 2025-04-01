@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['login']);
       }
       else{
-        alert('Post was unable to complete.');
+        alert('Registration was unable to complete. Username may already be taken.'); //Post was unable to complete
       }
     })
   }
