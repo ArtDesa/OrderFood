@@ -1,11 +1,15 @@
 <!-- header component -->
 <!-- selector from HeaderComponent class in header.component.ts -->
-<app-header [isHomeVisible]="homeLinkVisible"></app-header><br> <!-- To hide Home until login. isHomeVisible is from header, homeLinkVisible from app component -->
+ <!-- Property Binds isHomeVisible in header to homeLinkVisible from App component -->
+<app-header [isHomeVisible]="homeLinkVisible"></app-header><br>
 
 <!-- Both <app-home></app-home> and <app-register></app-register> no longer used so they are commented out. -->
 <!-- <app-home></app-home> - What it used to be in Day2 -->
 <!-- <app-register></app-register>  -->
-<router-outlet (activate)="onActivate($event)"></router-outlet> <!-- For hiding Home until Login is done -->
+
+<!-- Event Binds router-outlet "activate" property to onActivate(), 
+     so homeLinkVisible becomes true when login is successful -->
+<router-outlet (activate)="onActivate($event)"></router-outlet>
 <!-- <router-outlet> directive in Angular is a placeholder in the HTML 
      where the Angular Router dynamically loads and displays components 
      based on the current route. -->

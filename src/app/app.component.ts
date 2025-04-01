@@ -9,9 +9,8 @@ export class AppComponent {
   title = 'foodCart';
   
   //Default value is false to hide Home hyperlink in Header Component
-  homeLinkVisible: boolean = false;
-
-
+  homeLinkVisible: boolean = false; 
+  
   onActivate(component: any) {
     //Checks if component loaded is Login component
     if (component.login){
