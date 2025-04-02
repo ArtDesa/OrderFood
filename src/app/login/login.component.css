@@ -1,0 +1,19 @@
+.loginForm{
+    display: block;
+    padding: 20px 20px;
+    margin: 20px 20px;
+}
+
+.loginLabel{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.inputBox{
+    margin-bottom: 20px;
+}
+
+#loginButton{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}

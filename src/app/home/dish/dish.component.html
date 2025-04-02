@@ -12,13 +12,13 @@
     <!-- Ex: dishes=[ {}, {}, {}, ...] Each {} is a dish  -->
     <!-- Ex: dishes=[ {"id": 1, "dish": "Tikka Masala", .....}, {}, {}, ...] 
          inside each prior dish {} is a "dish" key-value pair. So, dish.dish" -->
-    <h3 [appHighlight] = 'color'>Dish Name: {{dish.dish | uppercase}} </h3>
+    <h3 [appHighlight] = 'color'>{{dish.dish | uppercase}} </h3> <!-- Dish Name: {{dish.dish | uppercase}} -->
     <!-- dish.price because in home.component.ts, the prices for each dish is found under "price"  -->
     <p>Price: {{dish.price | currency:'EUR'}}</p>
     <!-- dish.pic because in home.component.ts, the images for each dish is set under "pic" -->
     <img class="img" src="{{dish.pic}}"><br>
     
-    <label>Number of Servings</label>
+    <label>Number of Servings: </label>
     <!-- Servings is two-way databound from our .ts file -->
     <input type="number" [(ngModel)]="servings">
     <!-- Button to AddtoCart is only shown if number of servings is above zero -->

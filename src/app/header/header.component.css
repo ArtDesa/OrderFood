@@ -1,0 +1,9 @@
+.headerText {
+    font-family: "Poppins-Bold", sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    /*background-color: blue;*/
+    /*color: white;*/
+    padding-right: 15px;
+    padding-left: 15px;
+  }

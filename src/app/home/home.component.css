@@ -2,7 +2,25 @@ h1{
     background-color: blue;
 }
 
+.rightButtons {
+    padding: 3px 20px;
+    margin-right: 20px; 
+}
+
 .valid{
     color: green;
     background-color: yellow;
+}
+
+#searchIngredients{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#dishListing{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

@@ -5,19 +5,19 @@
 
 <!-- Property Bind formGroup to the property loginForm in the LoginComponent class at login.component.ts (line 33) -->
 <!-- Event Bind ngSubmit to the login() method that can be found in LoginComponent class at login.component.ts (line 70) -->
-<form [formGroup]="loginForm" (ngSubmit)="login()">
-    <label>Username:</label><br>
-    <input formControlName="username">
+<form class="loginForm" [formGroup]="loginForm" (ngSubmit)="login()">
+    <label class="loginLabel"> Username:</label><br>
+    <input class="inputBox" formControlName="username">
     <span style="color:red" *ngIf="loginForm.get('username').touched && loginForm.get('username').invalid"><br>*Username is required to be at least 6 characters.</span>
     <br>
     <!-- "usernameError" -->
-    <label>Password:</label><br>
-    <input formControlName="password">
+    <label class="loginLabel">Password:</label><br>
+    <input class="inputBox" formControlName="password">
     <span style="color:red" *ngIf="loginForm.get('password').touched && loginForm.get('password').invalid"><br>*Username is required to be at least 6 characters.</span>
     <br>
 
-    <label>Confirm Password:</label><br>
-    <input formControlName="confirmPassword"><br>
+    <label class="loginLabel">Confirm Password:</label><br>
+    <input class="inputBox" formControlName="confirmPassword"><br>
 
-    <button type="submit" [disabled]="loginForm.invalid">Login!</button>
+    <button id="loginButton" type="submit" [disabled]="loginForm.invalid">Login</button>
 </form>
