@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { AbstractControl, FormBuilder, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BackendService } from '../services/backend.service';
 
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   @Output() loggedIn = new EventEmitter<boolean>();
 
   //Form Builder object "fb", Router object "router", BackendService object "server"
-  constructor(private fb: FormBuilder, private router:Router, private server: BackendService) { }
+  constructor(private fb: UntypedFormBuilder, private router:Router, private server: BackendService) { }
 
   ngOnInit(): void {
   }
