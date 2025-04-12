@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //FormsModule class imported from @angular/forms
 //ReactiveFormsModule mported from @angular/forms (provides the infrastructure and directives needed to create and manage reactive forms.)
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
+//Used to be HttpClientModule. After Angular 17 its deprecated and we use provideHttpClient instead. Also withInterceptorsFromDi.
 //HttpClientModule class imported from @angular/common/http
 /*HttpClientModule enables your Angular app to communicate with 
   back-end services over HTTP. It provides all the tools you need 
