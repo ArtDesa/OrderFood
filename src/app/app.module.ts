@@ -104,6 +104,10 @@ const routes: Routes = [
 export class AppModule { }
 
 /*
+*Note: HttpClientModule is deprecated from Angular 18 onwards and replaced with the provideHttpClient() function. Check bottom of these notes for details.
+Also, upgrading from Angular 16 to Angular 17 required a change for the Highlight directive. Specifically the highlight.directive.ts file.
+The constructor(private el: ElementRef, public renderer: Renderer2) { } was replaced with private el = inject(ElementRef); and private renderer = inject(Renderer2);
+
 Before running the application, you need to start the JSON server (using db.json) with: json-server --watch db.json
 This will launch the backend at a default URL, typically http://localhost:3000.
 *Note: This will require the terminal used to run the command (the terminal will be busy running the server to take any other commands)
@@ -125,4 +129,39 @@ If not installed, install it with: npm install -g @angular/cli
 npm is used to install, manage, and update the dependencies (libraries, tools, etc.) required by your Angular project.))
 
 To Create an Angular project use: ng new <my-angular-app>
+
+
+  Explaining change from HttpClientModule to provideHttpClient() function:
+
+The change from `HttpClientModule` to `providers: [provideHttpClient(withInterceptorsFromDi())]` in Angular 18 reflects a shift towards a more streamlined and flexible approach to configuring the `HttpClient`. Here's a breakdown of the change:
+
+### Why This Change Occurred:
+1. **Deprecation of `HttpClientModule`**:
+   - In Angular 18, `HttpClientModule` was deprecated because it essentially duplicated the functionality of the `provideHttpClient()` function.
+   - The Angular team aimed to simplify the setup for `HttpClient` by encouraging developers to use `provideHttpClient()` directly, which aligns better with Angular's move towards standalone components and functional configurations.
+
+2. **Improved Configuration**:
+   - The `provideHttpClient()` function allows developers to configure `HttpClient` with additional features, such as interceptors, fetch API support, and JSONP support, in a more modular and declarative way.
+   - This approach reduces the likelihood of developers accidentally including both `HttpClientModule` and `provideHttpClient()` in their projects, which was a common issue.
+
+### How It Replicates `HttpClientModule` Functionality:
+- **Dependency Injection**:
+  - `HttpClientModule` provided the `HttpClient` service via Angular's dependency injection system. The `provideHttpClient()` function does the same, ensuring that `HttpClient` can be injected into components, services, and other classes.
+
+- **Interceptors**:
+  - The `withInterceptorsFromDi()` option in `provideHttpClient()` replicates the interceptor functionality previously supported by `HttpClientModule`. It allows you to include class-based interceptors in the `HttpClient` configuration.
+
+- **Standalone Components**:
+  - For standalone components, `provideHttpClient()` can be added directly to the `providers` array during application bootstrap, making it more versatile than `HttpClientModule`.
+
+### Example:
+Here’s how the new setup looks:
+```typescript
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideHttpClient(withInterceptorsFromDi()),
+  ],
+});
+```
+This change simplifies the configuration process and aligns with Angular's evolving architecture. Let me know if you'd like help adapting your project further!
 */
