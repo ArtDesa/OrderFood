@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //FormsModule class imported from @angular/forms
 //ReactiveFormsModule mported from @angular/forms (provides the infrastructure and directives needed to create and manage reactive forms.)
-import { HttpClientModule } from '@angular/common/http'
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 //HttpClientModule class imported from @angular/common/http
 /*HttpClientModule enables your Angular app to communicate with 
   back-end services over HTTP. It provides all the tools you need 
@@ -76,7 +76,7 @@ const routes: Routes = [
   {path:'**', component: PageNotFoundComponent}
 ]
 
-@NgModule({
+@NgModule({ 
   declarations: [
     AppComponent,
     HomeComponent,
@@ -91,16 +91,16 @@ const routes: Routes = [
     ConfirmDirective,
     PageNotFoundComponent
   ],
+  bootstrap: [AppComponent], 
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes),
-    HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    RouterModule.forRoot(routes)
+  ], 
+  providers: [provideHttpClient(withInterceptorsFromDi())] 
 })
+
 export class AppModule { }
 
 /*
