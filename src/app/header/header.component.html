@@ -3,7 +3,9 @@
      while the component beneath it changes -->
 <!-- Each link corresponds to page: 
      localhost:4200/register, localhost:4200/login, localhost:4200/home -->
+<div>
 <a class="headerText" routerLink="/register" routerLinkActive="active">Register</a> |
 <a class="headerText" routerLink="/login" routerLinkActive="active">Login</a> |
 <a class="headerText" [style.visibility]="isHomeVisible ? 'visible' : 'hidden'" routerLink="/home" routerLinkActive="active">Home</a>
+</div>
 <!-- isHomeVisible hides Home until the user logs in first -->

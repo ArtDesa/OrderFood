@@ -5,19 +5,45 @@
 
 <!-- Property Bind formGroup to the property loginForm in the LoginComponent class at login.component.ts (line 33) -->
 <!-- Event Bind ngSubmit to the login() method that can be found in LoginComponent class at login.component.ts (line 70) -->
-<form class="loginForm" [formGroup]="loginForm" (ngSubmit)="login()">
-    <label class="loginLabel"> Username:</label><br>
-    <input class="inputBox" formControlName="username">
-    <span style="color:red" *ngIf="loginForm.get('username').touched && loginForm.get('username').invalid"><br>*Username is required to be at least 6 characters.</span>
-    <br>
-    <!-- "usernameError" -->
-    <label class="loginLabel">Password:</label><br>
-    <input class="inputBox" formControlName="password">
-    <span style="color:red" *ngIf="loginForm.get('password').touched && loginForm.get('password').invalid"><br>*Username is required to be at least 6 characters.</span>
-    <br>
 
-    <label class="loginLabel">Confirm Password:</label><br>
-    <input class="inputBox" formControlName="confirmPassword"><br>
 
-    <button id="loginButton" type="submit" [disabled]="loginForm.invalid">Login</button>
-</form>
+<body>
+    <div id="insideBody">   
+        <form class="loginForm" [formGroup]="loginForm" (ngSubmit)="login()">
+            <div id="userDiv" class="formSection">
+                <div>
+                    <label>Username:</label>
+                </div>
+                <div>
+                    <input formControlName="username">
+                </div>
+                <div class="spanDiv">
+                    <span style="color:red" *ngIf="loginForm.get('username').touched && loginForm.get('username').invalid">*Username is required to be at least 6 characters.</span>
+                </div>
+            </div>
+            <!-- "usernameError" -->
+            <div id="passDiv" class="formSection">
+                <div>
+                    <label>Password:</label>
+                </div>
+                <div>
+                    <input formControlName="password">
+                </div>
+                <div class="spanDiv">
+                    <span style="color:red" *ngIf="loginForm.get('password').touched && loginForm.get('password').invalid">*Password is required to be at least 6 characters.</span>
+                </div>
+            </div>
+            <div id="confDiv" class="formSection">
+                <div>
+                    <label>Confirm Password:</label>
+                </div>
+                <div>
+                    <input formControlName="confirmPassword">
+                </div>
+            </div>
+
+            <button id="loginButton" type="submit" [disabled]="loginForm.invalid">Login</button>
+            
+        </form>
+    </div>
+</body>

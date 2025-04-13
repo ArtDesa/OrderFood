@@ -19,39 +19,83 @@
                    which we are using to confirm that the Password and Confirm Password match. 
      This is so that the form can use the confirm directive.-->
 <br>
-<form appConfirm #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm, addressForm)">
-    <!-- The following provide input for the user to fill and requirements for those values -->
-    <label>Username:</label><br>
-    <!-- name="" attribute is an HTML feature used to uniquely identify the form control within the <form> element. -->
-    <!-- ngModel keyword tells the <input> that it is a FormControl. Add a Template Variable  -->
-    <!-- #username="ngModel" syntax creates a template reference variable called username 
-         that references the Angular directive ngModel applied to the input. -->
-    <!-- It gives you access to the input’s state (e.g., whether it’s valid, touched, dirty, etc.) within the template.
-         This is useful when you want to check or display the input field's validation status or value in real-time in the template. -->
-    <input ngModel name="username" #username="ngModel" required minlength="6"> <!--required minlength="6"-->
-    <!-- <span> tag is an inline element, meaning it doesn’t cause line breaks and flows with surrounding content. -->
-    <!-- is a generic inline container used for grouping and styling text or other inline elements. -->
-    <span style="color:red" *ngIf="username.touched && username.invalid"><br>*Username is required of at least 6 characters.</span>
-    <br>
+<body>
+     <div id="insideBody">
+          <form id="mainForm" appConfirm #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm, addressForm)">
+               <div id="userDiv" class="formSection">
+                    <div>
+                         <!-- The following provide input for the user to fill and requirements for those values -->
+                         <label>Username:</label><br>
+                    </div>
+                    <div>
+                         <!-- name="" attribute is an HTML feature used to uniquely identify the form control within the <form> element. -->
+                         <!-- ngModel keyword tells the <input> that it is a FormControl. Add a Template Variable  -->
+                         <!-- #username="ngModel" syntax creates a template reference variable called username 
+                              that references the Angular directive ngModel applied to the input. -->
+                         <!-- It gives you access to the input’s state (e.g., whether it’s valid, touched, dirty, etc.) within the template.
+                              This is useful when you want to check or display the input field's validation status or value in real-time in the template. -->
+                         <input ngModel name="username" #username="ngModel" required minlength="6"> <!--required minlength="6"-->
+                    </div>
+                    <div class="spanDiv">
+                         <!-- <span> tag is an inline element, meaning it doesn’t cause line breaks and flows with surrounding content. -->
+                         <!-- is a generic inline container used for grouping and styling text or other inline elements. -->
+                         <span style="color:red" *ngIf="username.touched && username.invalid"><br>*Username is required of at least 6 characters.</span>
+                         <br>
+                    </div>
+               </div>
+               <div id="passDiv" class="formSection">
+                    <div>
+                         <label>Password:</label><br>
+                    </div>
+                    <div>
+                         <input ngModel name="password" #password="ngModel" required>
+                    </div>
+                    <div class="spanDiv">
+                         <span style="color:red" *ngIf="password.touched && password.errors?.['required']"><br>*Password is required, please provide a password.</span>
+                         <br>
+                    </div>
+               </div>
+               <div id="confDiv" class="formSection">
+                    <div>
+                         <label>Confirm Password:</label><br>
+                    </div>
+                    <div>
+                         <input ngModel name="confirmPassword" #confirmPassword="ngModel" required>
+                    </div>
+                    <div class="spanDiv">
+                         <span style="color:red" *ngIf="confirmPassword.touched && confirmPassword.invalid"><br>*Please confirm the password you have provided.</span>
+                         <br>
+                    </div>
+               </div>
+               <div id="addFormDiv" class="formSection">
+                    <form id="addressForm" #addressForm="ngForm">
+                         <div id="addLabel" class="formSection">    
+                              <label>Address:</label><br>
+                         </div>
+                         <div id="afterAddLabel" class="formSection">
+                              <div id="streetDiv" class="formSection">
+                                   <div>
+                                        <label>Street Number:</label><br>
+                                   </div>
+                                   <div>
+                                        <input type="text" name="street" ngModel #street="ngModel"><br>
+                                   </div>
+                              </div>
+                              <div id="zipDiv" class="formSection">
+                                   <div>
+                                        <label>Zip Code:</label>
+                                   </div>
+                                   <div>
+                                        <input type="number" name="zip" ngModel #zip="ngModel"><br>
+                                   </div>
+                              </div>
+                         </div>
+                    </form>
+               </div>
 
-    <label>Password:</label><br>
-    <input ngModel name="password" #password="ngModel" required>
-    <span style="color:red" *ngIf="password.touched && password.errors?.['required']"><br>*Password is required, please provide a password.</span>
-    <br>
+               <button id="submitButton" type="submit" [disabled]="registerForm.form.invalid || addressForm.form.invalid">Submit</button>
 
-    <label>Confirm Password:</label><br>
-    <input ngModel name="confirmPassword" #confirmPassword="ngModel" required>
-    <span style="color:red" *ngIf="confirmPassword.touched && confirmPassword.invalid"><br>*Please confirm the password you have provided.</span>
-    <br>
+          </form>
 
-    <form #addressForm="ngForm">
-        <label>Address:</label><br>
-        <label>Street Number:</label><br>
-        <input type="text" name="street" ngModel #street="ngModel"><br>
-
-        <label>Zip Code:</label>
-        <input type="number" name="zip" ngModel #zip="ngModel"><br>
-    </form>
-
-    <button type="submit" [disabled]="registerForm.form.invalid || addressForm.form.invalid">Submit</button>
-</form>
+     </div>
+</body>

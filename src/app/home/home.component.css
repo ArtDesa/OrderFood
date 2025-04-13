@@ -2,9 +2,19 @@ h1{
     background-color: blue;
 }
 
+label {
+    font-size: 2em;
+}
+
+input {
+    font-size: 1.25em;
+}
+
 .rightButtons {
     padding: 3px 20px;
     margin-right: 20px; 
+    font-size: 1.25em;
+    font-weight: bold;
 }
 
 .valid{
@@ -23,4 +33,17 @@ h1{
     margin-right: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+#dishGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 50px;
+}
+
+#dishDiv {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
 }

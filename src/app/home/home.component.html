@@ -25,11 +25,13 @@
     <!-- *ngFor -> acts as a For loop for Html tags (dynamically generate HTML tags based on that data) -->
     <!-- dishes=[ {}, {}, {}, ...] Each {} is represented by the "obj" loop/iteration variable -->
     <!-- By adding the pipe on our *ngFor, we can  -->
-    <div *ngFor="let obj of dishes | ingSearch:ingredient">
-        <!-- <app-dish> is from the dish.component.ts. It implements the dish.component.html on this page -->
-        <!-- dish is the property in DishComponent class -->
-        <!-- [dish] Property Binds value to "obj" from "let obj of dishes | ingSearch:ingredient" -->
-        <app-dish [dish]="obj"></app-dish>
+    <div id="dishGrid">
+        <div id="dishDiv" *ngFor="let obj of dishes | ingSearch:ingredient">
+            <!-- <app-dish> is from the dish.component.ts. It implements the dish.component.html on this page -->
+            <!-- dish is the property in DishComponent class -->
+            <!-- [dish] Property Binds value to "obj" from "let obj of dishes | ingSearch:ingredient" -->
+            <app-dish [dish]="obj"></app-dish>
+        </div>
     </div>
 </div>
 

@@ -1,0 +1,40 @@
+#outerDiv {
+    margin-top: 100px;
+    margin-left: 100px;
+    padding: 20px;
+    width: 380px;
+    
+}
+
+#checkDiv {
+    background: #E8E8E8;
+    padding: 30px;
+    width: 345px;
+}
+
+label {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+#eachDish {
+    margin-bottom: 30px;
+}
+
+#dishNoPrice {
+    margin-bottom: 10px;
+}
+
+#totalDiv {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#orderButtonDiv {
+    margin-top: 20px;
+}
+
+#orderButton {
+    font-weight: bold;
+    font-size: 20px;
+}

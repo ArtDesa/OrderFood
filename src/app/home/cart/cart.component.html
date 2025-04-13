@@ -1,10 +1,23 @@
 <!-- *ngFor lops through the cart and displays the dish, servings, and price -->
-<div *ngFor="let item of cart">
-    {{item.dish.dish}} : {{item.servings}} <br>
-    Price: {{item.dish.price*item.servings}}<br>
+<div id="outerDiv">
+    <div id="checkDiv">
+        <div *ngFor="let item of cart">
+            <div id="eachDish">
+                <div id="dishNoPrice">
+                    <label>{{item.dish.dish}} : {{item.servings}}</label> <br>
+                </div>
+                <div>
+                    <label>Price: {{item.dish.price*item.servings}}</label><br>
+                </div>
+            </div>
+        </div>
+        <!-- Then displays the total price below -->
+        <div id="totalDiv">
+            <label>Total: {{total}}</label>
+        </div>
+    </div>
+    <div id="orderButtonDiv">
+        <button id="orderButton">Place Order (Not implemented yet)</button>
+        <br>
+    </div>
 </div>
-<!-- Then displays the total price below -->
-Total: {{total}}
-<br>
-<button>Place Order (Not implemented yet)</button>
-<br>

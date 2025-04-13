@@ -1,0 +1,48 @@
+body { 
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    display: grid;
+    /*background: linear-gradient(to bottom, #f7f7f7, #64F4C4, #f7f7f7, #64F4C4);*/
+}
+
+#insideBody {
+    margin-top: 33.3vh;
+}
+
+#mainform {
+    
+    padding: 20px 20px;
+    margin: 20px 20px;
+    
+}
+
+label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 1.50em;
+}
+
+input {
+    width: 300px;
+    height: 25px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+}
+
+.formSection{
+    margin-bottom: 20px;
+}
+
+#submitButton{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 1.25em;
+}
+
+.spanDiv {
+    margin-top: 10px;
+}

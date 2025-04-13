@@ -1,9 +1,7 @@
 /* You can add global styles to this file, and also import other style files */ 
 
-body {
-    font-family: 'Poppins', sans-serif;
-    color: #000000;
-    /*background-color: #f7f7f7;*/
-    background: linear-gradient(to bottom, #f7f7f7, #64F4C4, #f7f7f7, #64F4C4, #f7f7f7);
-    min-height: 100vh;
+html {
+    min-height: 100%;
+    background: linear-gradient(to bottom, #f7f7f7, #64F4C4, #f7f7f7, #64F4C4);
 }
+
